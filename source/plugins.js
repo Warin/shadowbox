@@ -15,8 +15,7 @@ if (navigator.plugins && navigator.plugins.length) {
     each(navigator.plugins, function(i, p) {
         names.push(p.name);
     });
-    names = names.join(',');
-
+    
     S.plugins = {
         fla:    names.contains('Shockwave Flash'),
         qt:     names.contains('QuickTime')
