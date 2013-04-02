@@ -842,6 +842,9 @@ S.getPlayer = function(content) {
         if (S.qt && S.qt.ext.contains(ext)) {
             return "qt";
         }
+        if (S.video5 && S.video5.ext.contains(ext)) {
+            return "video5";
+        }
     }
 
     return "iframe";
