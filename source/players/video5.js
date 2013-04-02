@@ -21,7 +21,6 @@ var hSpace = 32, vSpace= 139+35;
  * @public
  */
 S.video5 = function(obj, id) {
-    console.log(obj)
     this.obj = obj;
     this.id = id;
 
@@ -45,7 +44,7 @@ S.video5.prototype = {
         var opt = S.options,
             autoplay = String(opt.autoplayMovies),
             controls = String(opt.showMovieControls);
-console.log(body,dims)
+
         var mov=this.obj.link.href.toString().replace(/\.(mp4|ogv)/gi,"");
         var html='\
             <div class="cm-mod cm-mod-regular cm-mod-compact">\
