@@ -4,7 +4,7 @@
  * @version     0.1
  */
 /*jslint devel: true, browser: true, sub: true, debug: false, white: true, maxerr: 999, indent: 4 */
-/*global jQuery, escape, unescape, S */
+/*global jQuery, $, S, get, remove */
 /**
  * The height (in pixels) of the QuickTime controller.
  *
@@ -50,14 +50,13 @@ S.video5.prototype = {
             <div class="cm-mod cm-mod-regular cm-mod-compact">\
                 <div class="head">\
                     <hgroup>\
-                        <h2 class="cm-typo-heading-2">'+((this.obj.title)?this.obj.title:"Video")+'</h2>\
+                        <h2 class="cm-typo-heading-2">'+(this.obj.title||"Video")+'</h2>\
                     </hgroup>\
                 </div><!-- .head -->\
                 <div class="body">\
                     <div class="cm-lib-video -is-paused is-mouseover fixed-controls -no-toggle -aside-time -no-time -no-mute -no-volume play-button no-embed" data-ratio="'+(this.obj.height/this.obj.width)+'">\
                         <video>\
                             <source type="video/ogg" src="'+mov+'.ogv">\
-                            <source type="video/webm" src="'+mov+'.webm">\
                             <source type="video/mp4" src="'+mov+'.mp4">\
                         </video>\
                     </div>\
@@ -77,7 +76,7 @@ S.video5.prototype = {
      */
     remove: function() {
         try {
-            document[this.id].Stop(); // stop QT video stream
+            this.video5.stop();//stop the video
         } catch(e) {}
 
         var el = get(this.id);
@@ -90,10 +89,14 @@ S.video5.prototype = {
      * @public
      */
     onLoad: function() {
-        $(".cm-lib-video").flowplayer({
-            swf:"_swf/flowplayer.swf",
-            key:"#$68dc153883608cabb8e"
-        }).bind("load ready resume pause finish",function(e,api){/*track(e.type,api)*/});
+        this.video5=
+            $(".cm-lib-video")
+            .flowplayer({
+                swf:"_swf/flowplayer.swf",
+                key:"#$68dc153883608cabb8e"
+            })
+            //.bind("load ready resume pause finish",function(e,api){track(e.type,api);})
+            .data("flowplayer");
     }
 
-}
+};
