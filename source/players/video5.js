@@ -56,8 +56,8 @@ S.video5.prototype = {
                 <div class="body">\
                     <div class="cm-lib-video -is-paused is-mouseover fixed-controls -no-toggle -aside-time -no-time -no-mute -no-volume play-button no-embed" data-ratio="'+(this.obj.height/this.obj.width)+'">\
                         <video>\
+                            <source type="video/ogg" src="'+mov+'.ogv">\
                             <source type="video/webm" src="'+mov+'.webm">\
-                            <source type="video/ogv" src="'+mov+'.ogv">\
                             <source type="video/mp4" src="'+mov+'.mp4">\
                         </video>\
                     </div>\
