@@ -839,9 +839,6 @@ S.getPlayer = function(content) {
         if (S.flv && S.flv.ext.contains(ext)) {
             return "flv";
         }
-        if (S.qt && S.qt.ext.contains(ext)) {
-            return "qt";
-        }
         if (S.video5 && S.video5.ext.contains(ext)) {
             return "video5";
         }
