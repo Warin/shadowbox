@@ -1,7 +1,7 @@
 ---
 
 # An array of names of players found in source/players
-players: [flv, html, iframe, img, qt, swf, video5]
+players: [flv, html, iframe, img, swf, video5]
 
 # YES to compress the code, NO to use the source code
 compress: NO
