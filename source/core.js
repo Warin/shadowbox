@@ -14,17 +14,17 @@ var S = {
      */
     version: "3.0.3"
 
-}
+};
 
 Array.prototype.contains = Array.prototype.contains || function (obj) {
-    for (var i = 0; i < this.length; ++i) {
+    for (var i=0, len=this.length; i<len; ++i) {
         if (this[i] === obj) {
             return true;
         }
     }
 
     return false;
-}
+};
 
 var galleryName = /^(light|shadow)box\[(.*?)\]/i,
     inlineParam = /\s*([a-z_]*?)\s*=\s*(.+)\s*/,
@@ -431,7 +431,7 @@ S.init = function(options, callback) {
     if (!S.path) {
         // determine script path automatically
         var path, scripts = document.getElementsByTagName("script");
-        for (var i = 0, len = scripts.length; i < len; ++i) {
+        for (var i=0, len=scripts.length; i<len; ++i) {
             path = scriptPath.exec(scripts[i].src);
             if (path) {
                 S.path = path[1];
@@ -859,7 +859,7 @@ function filterGallery() {
     var err = S.errorInfo, plugins = S.plugins, obj, remove, needed,
         m, flashVersion;
 
-    for (var i = 0; i < S.gallery.length; ++i) {
+    for (var i=0, len=S.gallery.length; i<len; ++i) {
         obj = S.gallery[i]
 
         remove = false; // remove the object?
