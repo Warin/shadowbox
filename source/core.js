@@ -145,10 +145,6 @@ S.errorInfo = {
     fla: {
         name: "Flash",
         url:  "http://www.adobe.com/products/flashplayer/"
-    },
-    qt: {
-        name: "QuickTime",
-        url:  "http://www.apple.com/quicktime/download/"
     }
 };
 
@@ -867,11 +863,6 @@ function filterGallery() {
         case "swf":
             if (!plugins.fla) {
                 needed = "fla";
-            }
-            break;
-        case "qt":
-            if (!plugins.qt) {
-                needed = "qt";
             }
             break;
         }
